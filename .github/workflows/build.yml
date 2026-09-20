@@ -23,6 +23,9 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
+      - name: Accept Android licenses
+        run: yes | flutter doctor --android-licenses
+
       - name: Install dependencies
         run: flutter pub get
 
