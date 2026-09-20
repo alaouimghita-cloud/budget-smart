@@ -20,19 +20,13 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0'
+          flutter-version: '3.19.x'
           channel: 'stable'
-
-      - name: Create Android licenses
-        run: |
-          mkdir -p $ANDROID_HOME/licenses
-          echo "24333f1563bf966950eb262984b3c0f1f16fcaa0" > $ANDROID_HOME/licenses/android-sdk-license
-          echo "84831b9409646a918e30573bab4c9c91346d8abd" >> $ANDROID_HOME/licenses/android-sdk-license
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build APk
+      - name: Build APK
         run: flutter build apk --release
 
       - name: Upload APK Artifact
