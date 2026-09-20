@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build APK
+      - name: Build APk
         run: flutter build apk --release
 
       - name: Upload APK Artifact
